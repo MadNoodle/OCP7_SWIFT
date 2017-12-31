@@ -8,33 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-  
-  // MARK : - MODEL
+class CalculatorViewController: UIViewController {
+  // MARK: - MODEL
   var brain = CalculatorBrainModel()
-  
-  
-
   // MARK: - Outlets
-  
   @IBOutlet weak var textView: UITextView!
   @IBOutlet var numberButtons: [UIButton]!
-  
+
     // MARK: - LifeCycle MMethods
   override func viewDidLoad() {
     super.viewDidLoad()
   }
-  
+
   // MARK: - Action
   @IBAction func tappedNumberButton(_ sender: UIButton) {
-    for (i, numberButton) in numberButtons.enumerated() {
-      if sender == numberButton {
+    for (i, numberButton) in numberButtons.enumerated() where sender == numberButton {
         brain.addNewNumber(i)
         updateDisplay()
-      }
     }
   }
-  
+
   @IBAction func plus() {
     if brain.canAddOperator {
       brain.performOperation(operand: "+", number: "")
@@ -43,7 +36,7 @@ class ViewController: UIViewController {
       showAlert()
     }
   }
-  
+
   @IBAction func minus() {
     if brain.canAddOperator {
       brain.performOperation(operand: "-", number: "")
@@ -52,23 +45,22 @@ class ViewController: UIViewController {
       showAlert()
     }
   }
-  
+
   @IBAction func equal() {
     if !brain.isExpressionCorrect {
       showAlert()
-    }else {
+    } else {
     let total = brain.calculateTotal()
-    textView.text = textView.text + "=\(total)"
+    textView.text! += "=\(total)"
     }}
-  
-  
+
   // MARK: - Methods
-  func showAlert(){
+  func showAlert() {
     let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
     alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
     self.present(alertVC, animated: true, completion: nil)
   }
-  
+
   func updateDisplay() {
     var text = ""
     let stack = brain.stringNumbers.enumerated()
@@ -82,6 +74,4 @@ class ViewController: UIViewController {
     }
     textView.text = text
   }
-  
-  
 }
