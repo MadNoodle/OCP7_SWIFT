@@ -30,7 +30,7 @@ class CalculatorViewController: UIViewController {
 
   @IBAction func plus() {
     if brain.canAddOperator {
-      brain.performOperation(operand: "+", number: "")
+      brain.sendOperandsToBrain(operand: "+", number: "")
       updateDisplay()
     } else {
       showAlert()
@@ -39,7 +39,7 @@ class CalculatorViewController: UIViewController {
 
   @IBAction func minus() {
     if brain.canAddOperator {
-      brain.performOperation(operand: "-", number: "")
+      brain.sendOperandsToBrain(operand: "-", number: "")
       updateDisplay()
     } else {
       showAlert()

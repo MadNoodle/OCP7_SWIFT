@@ -17,21 +17,6 @@ struct CalculatorBrainModel {
   var index = 0
 
   /**
-   Computed property that check if there is empty or have
-   only one member in number stack. Then you cannot perform operation
-   */
-  var isExpressionCorrect: Bool {
-    if let stringNumber = stringNumbers.last {
-      if stringNumber.isEmpty {
-        if stringNumbers.count == 1 {
-          return false
-        }
-      }
-    }
-    return true
-  }
-
-  /**
    Computed property that check if there is one nummber in number stack.
    if yes then you can add an operand
    */
@@ -45,9 +30,9 @@ struct CalculatorBrainModel {
   }
 
   /**
-   Method that takes an operand and a number and append them to the following arrays
+   When press operand this methods store operands and first number
    */
-  mutating func performOperation(operand: String, number: String) {
+  mutating func sendOperandsToBrain(operand: String, number: String) {
     operators.append(operand)
     stringNumbers.append(number)
   }
@@ -59,9 +44,26 @@ struct CalculatorBrainModel {
   mutating func addNewNumber(_ newNumber: Int) {
     if let stringNumber = stringNumbers.last {
       var stringNumberMutable = stringNumber
+      //Convert Int to String and append it to the former number
       stringNumberMutable += "\(newNumber)"
+      // Replace formernumber with apended number
       stringNumbers[stringNumbers.count-1] = stringNumberMutable
+      
     }
+  }
+  /**
+   Computed property that check if there is empty or have
+   only one member in number stack. Then you cannot perform operation
+   */
+  var isExpressionCorrect: Bool {
+    if let stringNumber = stringNumbers.last {
+      if stringNumber.isEmpty {
+        if stringNumbers.count == 1 {
+          return false
+        }
+      }
+    }
+    return true
   }
 
 /**
