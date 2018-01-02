@@ -41,7 +41,22 @@ class CountOnMeTests: XCTestCase {
     XCTAssert(brain.canAddOperator)
   }
   
-
+  // MARK: Testing add Decimal
+  func testGivenNumberInStack_whenDecimalPointIsTapped_thenDecimalNumberIsreturned(){
+    brain.stringNumbers = ["0"]
+    brain.addDecimal()
+    XCTAssertEqual(brain.stringNumbers, ["0."])
+  }
+  
+  func testGivenNumberInStackIsDecimal_whenDecimalIsTapped_thenPointCannotBeAdded(){
+      brain.stringNumbers = ["0.0"]
+      XCTAssertFalse(brain.canAddDecimal)
+  }
+  
+  func testGivenNumberStackIsEmpty_whenDecimalIsTapped_thenPointCannotBeAdded(){
+      brain.stringNumbers = [String()]
+      XCTAssertFalse(brain.canAddDecimal)
+  }
   
   // MARK: - Testing CalculatorBrain number storing
   func testGivenStackIsEmpty_WhenPressNumber_thenStackIsPopulated() {
@@ -54,12 +69,15 @@ class CountOnMeTests: XCTestCase {
     brain.addNewNumber(1)
     XCTAssert(brain.stringNumbers == ["101"])
   }
+  
   // MARK: - Testing CalculatorBrain operand storing
   func testGivenOperatorStackIsInitial_whenOperatorButtonIsPressed_ThenOperatorStackAppendOperator() {
     brain.sendOperandsToBrain(operand: "+", number: "")
     XCTAssert(brain.operators == ["+","+"])
   }
+  
   // MARK: - Testing if concatenation of numbers and operands are a valid operation
+  
   func testGivenStringNumbersIsEmpty_whenisExpressionCorrectTriggered_thenSendsFalse(){
     //Set stringNumbers to Empty
     brain.stringNumbers = [String()]
@@ -76,23 +94,36 @@ class CountOnMeTests: XCTestCase {
     XCTAssert(brain.isExpressionCorrect)
   }
   func testGivenStringNumbersHasManyMembers_whenisExpressionCorrectTriggered_thenSendsFalse(){
-    //Set stringNumbers to Empty
     brain.stringNumbers = ["10","11"]
     XCTAssert(brain.isExpressionCorrect)
   }
   
   // MARK: - Testing CalculatorBrain calculation
+  
+  func testGivenTwoNumbers_whenEqualButtonIsTappedAndResultIsInteger_ThenResultIsRounded(){
+    XCTAssertFalse(brain.roundEvaluation(2.5))
+    XCTAssert(brain.roundEvaluation(14.0))
+    
+  }
   func testGivenTwoNumbersAndAnOperandIsPlus_whenEqualButtonPressed_thenBraindSendBackResult(){
     brain.stringNumbers = ["1", "2"]
     brain.operators = ["+","+"]
     XCTAssert(brain.calculateTotal() == 3)
-    
   }
   
   func testGivenTwoNumbersAndAnOperandIsMinus_whenEqualButtonPressed_thenBraindSendBackResult(){
     brain.stringNumbers = ["10", "2"]
     brain.operators = ["+","-"]
     XCTAssert(brain.calculateTotal() == 8)
-    
+  }
+  func testGivenTwoNumbersAndAnOperandIsMultiply_whenEqualButtonPressed_thenBraindSendBackResult(){
+    brain.stringNumbers = ["10", "2"]
+    brain.operators = ["+","x"]
+    XCTAssert(brain.calculateTotal() == 20)
+  }
+  func testGivenTwoNumbersAndAnOperandIsDivide_whenEqualButtonPressed_thenBraindSendBackResult(){
+    brain.stringNumbers = ["5", "2"]
+    brain.operators = ["+","/"]
+    XCTAssert(brain.calculateTotal() == 2.5)
   }
 }
