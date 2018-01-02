@@ -44,7 +44,7 @@
 		C926DAE31D7581BB00477020 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C926DAE61D7581BB00477020 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C926DAE81D7581BB00477020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C926DAED1D7581BB00477020 /* x86_64.swiftmodule */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = x86_64.swiftmodule; path = CountOnMeTests.swiftmodule/x86_64.swiftmodule; sourceTree = BUILT_PRODUCTS_DIR; };
+		C926DAED1D7581BB00477020 /* x86_64.swiftmodule */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = file; name = x86_64.swiftmodule; path = CountOnMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C926DAF11D7581BB00477020 /* CountOnMeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountOnMeTests.swift; sourceTree = "<group>"; };
 		C926DAF31D7581BB00477020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C926DAF81D7581BB00477020 /* CountOnMeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CountOnMeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };

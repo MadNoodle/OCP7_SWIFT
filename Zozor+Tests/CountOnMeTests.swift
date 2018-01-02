@@ -126,4 +126,40 @@ class CountOnMeTests: XCTestCase {
     brain.operators = ["+","/"]
     XCTAssert(brain.calculateTotal() == 2.5)
   }
+  // MARK: - Testing user can use result in a new calculation
+  
+  func testGivenDidACalculation_WhenEqualIsPressed_thenResultIsStored() {
+      brain.stringNumbers = ["10", "2"]
+      brain.operators = ["+","x"]
+      _ = brain.calculateTotal()
+      XCTAssert(brain.formerResult == 20.0)
+    
+  }
+  func testGivenDidACalculation_WhenEqualIsPressed_thenUserCannAddOperator() {
+    brain.stringNumbers = ["10", "2"]
+    brain.operators = ["+","x"]
+    _ = brain.calculateTotal()
+    XCTAssert(brain.canAddOperator)
+  }
+  func testGivenResultIsStored_WhenOperandIsPressedFirst_thenStringNumberGrabFormerResult() {
+    brain.stringNumbers = ["10", "2"]
+    brain.operators = ["+","x"]
+    _ = brain.calculateTotal()
+    brain.sendOperandsToBrain(operand: "+", number: "")
+    XCTAssertEqual(brain.stringNumbers, ["20.0"])
+  }
+  
+  // MARK: - Testing AC function
+  
+  func testGivenResultIsStored_WhenACIsPressed_thenAllValuesAreReset() {
+    brain.stringNumbers = ["10", "2"]
+    brain.operators = ["+","x"]
+    brain.formerResult = 20.0
+    brain.allClear()
+    XCTAssert(brain.stringNumbers == [String()])
+    XCTAssert(brain.operators == ["+"])
+    XCTAssert(brain.formerResult == nil)
+    
+    
+  }
 }

@@ -16,6 +16,7 @@ struct CalculatorBrainModel {
   var stringNumbers: [String] = [String()]
   var operators: [String] = ["+"]
   var index = 0
+  var formerResult: Double?
   
   // MARK: - Input Methods
   /**
@@ -24,7 +25,7 @@ struct CalculatorBrainModel {
    */
   var canAddOperator: Bool {
     if let stringNumber = stringNumbers.last {
-      if stringNumber.isEmpty {
+      if stringNumber.isEmpty && formerResult == nil{
         return false
       }
     }
@@ -35,8 +36,15 @@ struct CalculatorBrainModel {
    When press operand this methods store operands and first number
    */
   mutating func sendOperandsToBrain(operand: String, number: String) {
-    operators.append(operand)
-    stringNumbers.append(number)
+    if formerResult != nil {
+      operators.append(operand)
+      stringNumbers = ["\(formerResult!)"]
+      print(stringNumbers)
+      formerResult = nil
+    } else {
+      operators.append(operand)
+      stringNumbers.append(number)
+    }
   }
   
   /**
@@ -119,7 +127,7 @@ struct CalculatorBrainModel {
         }
       }
     }
-   
+    formerResult = total
     clear()
     return total
   }
@@ -142,5 +150,13 @@ struct CalculatorBrainModel {
     stringNumbers = [String()]
     operators = ["+"]
     index = 0
+  }
+  
+  /**
+   Clear the model's data and purge former result
+   */
+  mutating func allClear() {
+    clear()
+    formerResult = nil
   }
 }

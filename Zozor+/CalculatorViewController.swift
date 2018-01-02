@@ -19,8 +19,6 @@ class CalculatorViewController: UIViewController {
   // MARK: - LifeCycle MMethods
   override func viewDidLoad() {
     super.viewDidLoad()
-//    // Use this delegation to override the textView max characters
-//    textView.delegate = self
   }
   
   // MARK: - Action
@@ -30,6 +28,7 @@ class CalculatorViewController: UIViewController {
       updateDisplay()
     }
   }
+  
   @IBAction func tappedPointButton(_ sender: Any) {
     if brain.canAddDecimal {
     brain.addDecimal()
@@ -88,6 +87,11 @@ class CalculatorViewController: UIViewController {
     }
   }
   
+  @IBAction func allClear(_ sender: UIButton) {
+    brain.allClear()
+    textView.text = "0"
+  }
+  
   // MARK: - Methods
   func showAlert() {
     let alertVC = UIAlertController(title: "Zéro!", message: "Expression incorrecte !", preferredStyle: .alert)
@@ -110,12 +114,4 @@ class CalculatorViewController: UIViewController {
   }
   
 }
-
-// ToDo:Implement max number of char in TextView
-//extension CalculatorViewController: UITextViewDelegate {
-//
-//  func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//    return textView.text.count + (text.count - range.length) <= 10
-//  }
-//}
 
