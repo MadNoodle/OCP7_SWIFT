@@ -31,8 +31,8 @@ class CalculatorViewController: UIViewController {
   
   @IBAction func tappedPointButton(_ sender: Any) {
     if brain.canAddDecimal {
-    brain.addDecimal()
-    updateDisplay()
+      brain.addDecimal()
+      updateDisplay()
     } else {
       showAlert()
     }
@@ -40,8 +40,17 @@ class CalculatorViewController: UIViewController {
   
   @IBAction func plus() {
     if brain.canAddOperator {
-      brain.sendOperandsToBrain(operand: "+", number: "")
-      updateDisplay()
+      let result = brain.formerResult
+      if result != nil {
+        if brain.roundEvaluation(result!){
+          let rounded = Int(result!)
+          brain.stringNumbers = ["\(rounded)"]
+          brain.formerResult = nil
+        }
+        updateDisplayForResultReuse(operand: "+")
+      } else {
+        brain.sendOperandsToBrain(operand: "+", number: "")
+        updateDisplay()}
     } else {
       showAlert()
     }
@@ -49,8 +58,17 @@ class CalculatorViewController: UIViewController {
   
   @IBAction func minus() {
     if brain.canAddOperator {
-      brain.sendOperandsToBrain(operand: "-", number: "")
-      updateDisplay()
+      let result = brain.formerResult
+      if result != nil {
+        if brain.roundEvaluation(result!){
+          let rounded = Int(result!)
+          brain.stringNumbers = ["\(rounded)"]
+          brain.formerResult = nil
+        }
+        updateDisplayForResultReuse(operand: "-")
+      } else {
+        brain.sendOperandsToBrain(operand: "-", number: "")
+        updateDisplay()}
     } else {
       showAlert()
     }
@@ -58,17 +76,37 @@ class CalculatorViewController: UIViewController {
   
   @IBAction func multiply(_ sender: Any) {
     if brain.canAddOperator {
-      brain.sendOperandsToBrain(operand: "x", number: "")
-      updateDisplay()
+      let result = brain.formerResult
+      if result != nil {
+        if brain.roundEvaluation(result!){
+          let rounded = Int(result!)
+          brain.stringNumbers = ["\(rounded)"]
+          brain.formerResult = nil
+        }
+        updateDisplayForResultReuse(operand: "x")
+      } else {
+        brain.sendOperandsToBrain(operand: "x", number: "")
+        updateDisplay()}
     } else {
       showAlert()
     }
   }
   
+
+  
   @IBAction func divide(_ sender: Any) {
     if brain.canAddOperator {
-      brain.sendOperandsToBrain(operand: "/", number: "")
-      updateDisplay()
+      let result = brain.formerResult
+      if result != nil {
+        if brain.roundEvaluation(result!){
+          let rounded = Int(result!)
+          brain.stringNumbers = ["\(rounded)"]
+          brain.formerResult = nil
+        }
+        updateDisplayForResultReuse(operand: "/")
+      } else {
+        brain.sendOperandsToBrain(operand: "/", number: "")
+        updateDisplay()}
     } else {
       showAlert()
     }
@@ -82,7 +120,7 @@ class CalculatorViewController: UIViewController {
       if brain.roundEvaluation(total){
         textView.text! += "\n =\(Int(total))"
       } else {
-      textView.text! += "\n =\(total)"
+        textView.text! += "\n =\(total)"
       }
     }
   }
@@ -111,6 +149,11 @@ class CalculatorViewController: UIViewController {
       text += stringNumber
     }
     textView.text = text
+  }
+  private func updateDisplayForResultReuse(operand: String) {
+    updateDisplay()
+    brain.sendOperandsToBrain(operand: operand, number: "")
+    updateDisplay()
   }
   
 }

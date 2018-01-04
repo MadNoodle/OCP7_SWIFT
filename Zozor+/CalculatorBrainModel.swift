@@ -36,15 +36,8 @@ struct CalculatorBrainModel {
    When press operand this methods store operands and first number
    */
   mutating func sendOperandsToBrain(operand: String, number: String) {
-    if formerResult != nil {
-      operators.append(operand)
-      stringNumbers = ["\(formerResult!)"]
-      print(stringNumbers)
-      formerResult = nil
-    } else {
       operators.append(operand)
       stringNumbers.append(number)
-    }
   }
   
   /**
