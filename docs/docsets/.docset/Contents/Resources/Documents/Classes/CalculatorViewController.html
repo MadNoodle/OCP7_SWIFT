@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CalculatorViewController Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/CalculatorViewController" class="dashAnchor"></a>
+    <a title="CalculatorViewController Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html"> Docs</a> (84% documented)</p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html"> Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        CalculatorViewController Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/CalculatorViewController.html">CalculatorViewController</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/CalculatorBrainModel.html">CalculatorBrainModel</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>CalculatorViewController</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight swift"><code><span class="kd">class</span> <span class="kt">CalculatorViewController</span><span class="p">:</span> <span class="kt">UIViewController</span></code></pre>
+
+                </div>
+              </div>
+            <p>This class handles the communication between
+Main view and Calculator Model. it send all information from user input
+to calculator Brain and send back processed calculation results to the view</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/PROPERTIES%20%20//"></a>
+                <a name="//apple_ref/swift/Section/PROPERTIES  //" class="dashAnchor"></a>
+                <a href="#/PROPERTIES%20%20//">
+                  <h3 class="section-name">PROPERTIES  //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CountOnMe24CalculatorViewControllerC5brainAA0D10BrainModelVv"></a>
+                    <a name="//apple_ref/swift/Property/brain" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CountOnMe24CalculatorViewControllerC5brainAA0D10BrainModelVv">brain</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Instantiate model</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">brain</span> <span class="o">=</span> <span class="kt"><a href="../Structs/CalculatorBrainModel.html">CalculatorBrainModel</a></span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/OUTLETS%20//"></a>
+                <a name="//apple_ref/swift/Section/OUTLETS //" class="dashAnchor"></a>
+                <a href="#/OUTLETS%20//">
+                  <h3 class="section-name">OUTLETS //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)textView"></a>
+                    <a name="//apple_ref/swift/Property/textView" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)textView">textView</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connect the textView to the controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">textView</span><span class="p">:</span> <span class="kt">UITextView</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)point"></a>
+                    <a name="//apple_ref/swift/Property/point" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)point">point</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Connect the decimal point button view to the controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">weak</span> <span class="k">var</span> <span class="nv">point</span><span class="p">:</span> <span class="kt">UIButton</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)numberButtons"></a>
+                    <a name="//apple_ref/swift/Property/numberButtons" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)numberButtons">numberButtons</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gather all the number buttons and connect it to the controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">numberButtons</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIButton</span><span class="p">]</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)operators"></a>
+                    <a name="//apple_ref/swift/Property/operators" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)operators">operators</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Gather all the operators buttons and connect it to the controller</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBOutlet</span> <span class="k">var</span> <span class="nv">operators</span><span class="p">:</span> <span class="p">[</span><span class="kt">UIButton</span><span class="p">]</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/ACTIONS%20//"></a>
+                <a name="//apple_ref/swift/Section/ACTIONS //" class="dashAnchor"></a>
+                <a href="#/ACTIONS%20//">
+                  <h3 class="section-name">ACTIONS //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)tappedNumberButton:"></a>
+                    <a name="//apple_ref/swift/Method/tappedNumberButton(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)tappedNumberButton:">tappedNumberButton(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method that sends the number keystroke input in
+model property stringNumbers and accordingly update display
+*** this action applies to all the member of numberButtons outlet Collection.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tappedNumberButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIButton pressed</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)operandButtonTapped:"></a>
+                    <a name="//apple_ref/swift/Method/operandButtonTapped(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)operandButtonTapped:">operandButtonTapped(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method that sends the operator keystroke input in
+model property operators and accordingly update display
+*** this action applies to all the member of operators outlet Collection. ***</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">operandButtonTapped</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIButton pressed</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)tappedPointButton:"></a>
+                    <a name="//apple_ref/swift/Method/tappedPointButton(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)tappedPointButton:">tappedPointButton(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Method that insert a decimal point in stringNumbers.
+** there can be only one decimal point in a number **</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">tappedPointButton</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">Any</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>&lt;#sender description#&gt;</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)equal"></a>
+                    <a name="//apple_ref/swift/Method/equal()" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)equal">equal()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Process the calculation. It calls the calculateTotal() Method from brain.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">equal</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)allClear:"></a>
+                    <a name="//apple_ref/swift/Method/allClear(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@M@CountOnMe@objc(cs)CalculatorViewController(im)allClear:">allClear(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Resets the display and the calculator brain storage to empty</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">@IBAction</span> <span class="kd">func</span> <span class="nf">allClear</span><span class="p">(</span><span class="n">_</span> <span class="nv">sender</span><span class="p">:</span> <span class="kt">UIButton</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>sender</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>UIButton</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/METHODS%20//"></a>
+                <a name="//apple_ref/swift/Section/METHODS //" class="dashAnchor"></a>
+                <a href="#/METHODS%20//">
+                  <h3 class="section-name">METHODS //</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CountOnMe24CalculatorViewControllerC9showAlertySS7message_tF"></a>
+                    <a name="//apple_ref/swift/Method/showAlert(message:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CountOnMe24CalculatorViewControllerC9showAlertySS7message_tF">showAlert(message:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Display an alert Controller to explain the user the rror</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">showAlert</span><span class="p">(</span><span class="nv">message</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>message</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String the message you wan to display</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CountOnMe24CalculatorViewControllerC16performOperationySS7operand_tF"></a>
+                    <a name="//apple_ref/swift/Method/performOperation(operand:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CountOnMe24CalculatorViewControllerC16performOperationySS7operand_tF">performOperation(operand:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Perform operation and update display</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">performOperation</span><span class="p">(</span><span class="nv">operand</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operand</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String representing the mathematical operand</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CountOnMe24CalculatorViewControllerC13updateDisplayyyF"></a>
+                    <a name="//apple_ref/swift/Method/updateDisplay()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CountOnMe24CalculatorViewControllerC13updateDisplayyyF">updateDisplay()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Interactively update TextView to display keystrokes and results</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">updateDisplay</span><span class="p">()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:9CountOnMe24CalculatorViewControllerC27updateDisplayForResultReuse33_F97414B540E06C99372C5E534E46B87FLLySS7operand_tF"></a>
+                    <a name="//apple_ref/swift/Method/updateDisplayForResultReuse(operand:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:9CountOnMe24CalculatorViewControllerC27updateDisplayForResultReuse33_F97414B540E06C99372C5E534E46B87FLLySS7operand_tF">updateDisplayForResultReuse(operand:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Reload former result when the user presses an operand
+after a calculation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">private</span> <span class="kd">func</span> <span class="nf">updateDisplayForResultReuse</span><span class="p">(</span><span class="nv">operand</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>operand</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>String the operand</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2018 <a class="link" href="" target="_blank" rel="external"></a>. All rights reserved. (Last updated: 2018-02-05)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.1</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

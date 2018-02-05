@@ -35,12 +35,6 @@ class CountOnMeTests: XCTestCase {
     XCTAssert(brain.canAddOperator)
   }
   
-  func testGivenStringNumbersContainsManyChars_whenAddNumberIsTriggered_thenSendsTrue(){
-    //Set stringNumbers to Empty
-    brain.stringNumbers = ["10000000"]
-    XCTAssert(brain.canAddOperator)
-  }
-  
   // MARK: Testing add Decimal
   func testGivenNumberInStack_whenDecimalPointIsTapped_thenDecimalNumberIsreturned(){
     brain.stringNumbers = ["0"]
@@ -52,11 +46,16 @@ class CountOnMeTests: XCTestCase {
       brain.stringNumbers = ["0.0"]
       XCTAssertFalse(brain.canAddDecimal)
   }
+  func testGivenNumberInStackIsNotDecimal_whenDecimalIsTapped_thenPointCannotBeAdded(){
+    brain.stringNumbers = ["0"]
+    XCTAssert(brain.canAddDecimal)
+  }
   
   func testGivenNumberStackIsEmpty_whenDecimalIsTapped_thenPointCannotBeAdded(){
       brain.stringNumbers = [String()]
       XCTAssertFalse(brain.canAddDecimal)
   }
+  
   
   // MARK: - Testing CalculatorBrain number storing
   func testGivenStackIsEmpty_WhenPressNumber_thenStackIsPopulated() {
@@ -141,14 +140,12 @@ class CountOnMeTests: XCTestCase {
     _ = brain.calculateTotal()
     XCTAssert(brain.canAddOperator)
   }
-  func testGivenResultIsStored_WhenOperandIsPressedFirst_thenStringNumberGrabFormerResult() {
-    brain.stringNumbers = ["10", "2"]
-    brain.operators = ["+","x"]
-    _ = brain.calculateTotal()
-    brain.sendOperandsToBrain(operand: "+", number: "")
-    XCTAssertEqual(brain.stringNumbers, ["20.0"])
-  }
   
+  func testGivenAresultIsADoubleInteger_whenResultIsSentBack_thenReturnsARoundedInteger(){
+    let result = 20.0
+    brain.roundResult(result)
+    XCTAssert(brain.stringNumbers == ["20"])
+  }
   // MARK: - Testing AC function
   
   func testGivenResultIsStored_WhenACIsPressed_thenAllValuesAreReset() {

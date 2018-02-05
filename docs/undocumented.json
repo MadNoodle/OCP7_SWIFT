@@ -1,0 +1,40 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P7/Zozor+/Controller/CalculatorViewController.swift",
+      "line": 40,
+      "symbol": "CalculatorViewController.viewDidLoad()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P7/Zozor+/Model/CalculatorBrainModel.swift",
+      "line": 16,
+      "symbol": "CalculatorBrainModel.stringNumbers",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P7/Zozor+/Model/CalculatorBrainModel.swift",
+      "line": 17,
+      "symbol": "CalculatorBrainModel.operators",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P7/Zozor+/Model/CalculatorBrainModel.swift",
+      "line": 18,
+      "symbol": "CalculatorBrainModel.index",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P7/Zozor+/Model/CalculatorBrainModel.swift",
+      "line": 19,
+      "symbol": "CalculatorBrainModel.formerResult",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/mathieujanneau/Desktop/OpenClassrooms/OC_P7"
+}

@@ -67,7 +67,9 @@ struct CalculatorBrainModel {
     return true
   }
   
+  /// Method that append a decimal point the number stack
   mutating func addDecimal(){
+    // calls stringNumber optionnal property
     if let stringNumber = stringNumbers.last {
       var stringNumberDecimal = stringNumber
       //Convert Int to String and append it to the former number
@@ -77,7 +79,12 @@ struct CalculatorBrainModel {
     }
   }
   
-  // MARK: - Evaluation & calculation metods
+  
+  // /////////////////////////////////////// //
+  // MARK: - Evaluation & calculation methods //
+  // /////////////////////////////////////// //
+  
+  
   /**
    Computed property that check if there is empty or have
    only one member in number stack. Then you cannot perform operation
@@ -129,6 +136,7 @@ struct CalculatorBrainModel {
    Check if the result is an Integer
    */
   mutating func roundEvaluation(_ result: Double) -> Bool{
+    // if a number divided by itself return 0 it is integer
     if result.truncatingRemainder(dividingBy: 1) == 0 {
       return true
     }
@@ -152,4 +160,16 @@ struct CalculatorBrainModel {
     clear()
     formerResult = nil
   }
+  
+  /// This function transform A double number to int
+  ///
+  /// - Parameter result: Double not rounded result sent by brain
+  mutating func roundResult(_ result: Double?) {
+    if roundEvaluation(result!){
+      let rounded = Int(result!)
+      stringNumbers = ["\(rounded)"]
+      formerResult = nil
+    }
+  }
+
 }

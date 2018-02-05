@@ -22,7 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" text="0" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="CT0-fb-Raf">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" text="5" textAlignment="right" translatesAutoresizingMaskIntoConstraints="NO" id="CT0-fb-Raf">
                                 <rect key="frame" x="16" y="20" width="343" height="324.5"/>
                                 <color key="backgroundColor" red="0.24527746819999999" green="0.53481305040000005" blue="0.58749136739999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -196,7 +196,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="plus" destination="BYZ-38-t0r" eventType="touchUpInside" id="wSX-dz-g1Q"/>
+                                            <action selector="operandButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Wfw-z0-N2w"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1md-mv-IxN">
@@ -207,7 +207,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="minus" destination="BYZ-38-t0r" eventType="touchUpInside" id="axZ-P6-JsH"/>
+                                            <action selector="operandButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cCr-hZ-beT"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D9e-qZ-ZAT">
@@ -218,7 +218,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="multiply:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ou-Fl-ycN"/>
+                                            <action selector="operandButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6DO-bR-kSa"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh4-kG-JrN">
@@ -232,7 +232,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <action selector="divide:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ucG-T2-BAF"/>
+                                            <action selector="operandButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HbM-jf-l31"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ojU-U5-nWV">
@@ -285,6 +285,10 @@
                         <outletCollection property="numberButtons" destination="cKJ-lP-BeQ" collectionClass="NSMutableArray" id="95z-oa-0gF"/>
                         <outletCollection property="numberButtons" destination="5iN-WA-tqI" collectionClass="NSMutableArray" id="cYC-AZ-zOd"/>
                         <outletCollection property="numberButtons" destination="57K-hd-XBz" collectionClass="NSMutableArray" id="xw1-Y0-XwN"/>
+                        <outletCollection property="operators" destination="u9t-JB-KHx" collectionClass="NSMutableArray" id="GQa-Ko-77J"/>
+                        <outletCollection property="operators" destination="1md-mv-IxN" collectionClass="NSMutableArray" id="s2O-c1-dVc"/>
+                        <outletCollection property="operators" destination="D9e-qZ-ZAT" collectionClass="NSMutableArray" id="Rzt-Dr-cJy"/>
+                        <outletCollection property="operators" destination="Fh4-kG-JrN" collectionClass="NSMutableArray" id="wHe-wh-38V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
