@@ -10,3 +10,5 @@ Students are supposed to clone or fork the repo and improve it. Their focus shou
 - MVC compliance
 - Tests
 - Bonus feature
+
+Full documentation can be found here : https://madnoodle.github.io/OCP7_SWIFT/Classes/CalculatorViewController.html#/c:@M@CountOnMe@objc(cs)CalculatorViewController(py)textView
